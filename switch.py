@@ -17,6 +17,7 @@ with open('accounts.csv') as csv_file:
             pass
         else:
             account_dict[row[0]] = (row[1],row[2])
+            account_dict[row[2]] = (row[1],row[2])
 
 if sys.argv[1] in account_dict.keys():
     print("Global settings set using: " + str(account_dict[sys.argv[1]]))
