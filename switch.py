@@ -5,7 +5,7 @@ import sys, os, csv
 account_dict = {}
 
 if (len(sys.argv) < 3):
-    print("Please enter first name before any flags")
+    print("Enter first name or username before parameters")
     sys.exit()
 
 with open('accounts.csv') as csv_file:
@@ -31,5 +31,8 @@ if sys.argv[2] in account_dict.keys():
             os.system('git commit')
 
 else:
-    print("Please enter first name before any flags or message")
+    if '-' in sys.argv[2]:
+        print("Enter first name or username before parameters")
+    else:
+        print("Incorrect name or username")
     sys.exit()
